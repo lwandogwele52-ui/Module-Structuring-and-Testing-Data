@@ -45,3 +45,30 @@ test("should throw an error when count is negative", () => {
   const count = -1;
   expect(() => repeatStr(str, count)).toThrow();
 });
+
+test("should return an empty string when repeating an empty string several times", () => {
+  const str = "";
+  const count = 3;
+  const repeatedStr = repeatStr(str, count);
+  expect(repeatedStr).toEqual("");
+});
+
+test("should return an empty string when repeating an empty string once", () => {
+  const str = "";
+  const count = 1;
+  const repeatedStr = repeatStr(str, count);
+  expect(repeatedStr).toEqual("");
+});
+
+test("should return an empty string when repeating an empty string zero times", () => {
+  const str = "";
+  const count = 0;
+  const repeatedStr = repeatStr(str, count);
+  expect(repeatedStr).toEqual("");
+});
+
+test("should throw an error when count is negative, even for an empty string", () => {
+  const str = "";
+  const count = -1;
+  expect(() => repeatStr(str, count)).toThrow();
+});
